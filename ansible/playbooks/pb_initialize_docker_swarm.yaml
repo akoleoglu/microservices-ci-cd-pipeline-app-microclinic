@@ -2,7 +2,7 @@
 - hosts: role_grand_master
   tasks:
   - name: initialize docker swarm
-    shell: docker swarm init
+    shell: docker swarm leave
   - name: run the visualizer app for docker swarm
     shell: | 
       docker service create \
