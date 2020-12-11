@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f /Users/ahmetkoleoglu/Desktop/DevOps/github/DevOps/DevOps/microservices-ci-cd-pipeline-app-microclinic/k8s/docker-compose.yml -o /Users/ahmetkoleoglu/Desktop/DevOps/github/DevOps/DevOps/microservices-ci-cd-pipeline-app-microclinic/k8s/base
+    kompose.image-pull-secret: regcred
+    kompose.service.expose: desert18.com
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: vets-service
+  name: vets-service
+spec:
+  rules:
+    - host: desert18.com
+      http:
+        paths:
+          - backend:
+              serviceName: vets-service
+              servicePort: 8083
+status:
+  loadBalancer: {}
