@@ -4,7 +4,7 @@ metadata:
   annotations:
     kompose.cmd: kompose convert -f /Users/ahmetkoleoglu/Desktop/DevOps/github/DevOps/DevOps/microservices-ci-cd-pipeline-app-microclinic/k8s/docker-compose.yml -o /Users/ahmetkoleoglu/Desktop/DevOps/github/DevOps/DevOps/microservices-ci-cd-pipeline-app-microclinic/k8s/base
     kompose.image-pull-secret: regcred
-    kompose.service.expose: petclinicstaging.desert18.com
+    kompose.service.expose: petclinic.desert18.com
     kompose.version: 1.22.0 (955b78124)
   creationTimestamp: null
   labels:
@@ -12,7 +12,7 @@ metadata:
   name: api-gateway
 spec:
   rules:
-    - host: petclinicstaging.desert18.com
+    - host: petclinic.desert18.com
       http:
         paths:
           - backend:
